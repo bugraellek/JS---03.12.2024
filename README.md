@@ -1,2 +1,2 @@
-# JS-ba-lang---03.12.2024
+# JS baslangic 03.12.2024
 JS e giriş
