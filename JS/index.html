@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <p>js</p>
+    <p>
+        10.90tl
+        12.80tl
+        23.75tl
+
+    </p>
+    <p id="fonksiyon" >
+    </p>
+    <p id="temperature">
+    </p>
+    <p id="person">
+    </p>
+    <p id="tamisim"></p>
+    <p id="obje"></p>
+    <p id="text"></p>
+    <p id="dizi"></p>
+    <p id="stok"></p>
+    <p id="stokiki"></p>
+    <p id="stok3"></p>
+    <p id="muz"></p>
+    <button onclick="document.getElementById('saat').innerHTML=Date()" style="border:1 px solid black; width: 80px; height: 20px;border-radius: 5px;display: flex; background-color: darkcyan;">Saat kaç?</button>
+    <p id="saat"></p>
+    <butt onclick="this.innerHTML=Date()" style="background-color: darkolivegreen; border: 1px solid black; border-radius: 5px;">Saat kaç?</butt>
+
+    <script>
+        let number =3.14;
+        let round = Math.round(number);
+        console.log(round);
+        // console.log(Math.round(0.9));
+
+        console.log('Buğra'+' '+'ELLEK')
+        console.log('$' +47.45)
+        console.log('$'+(20.95+7.99))
+        console.log('$'+((2095+799)/100))
+        // alert('sepet tutarınız'+ ' '+'$'+(2095+799)/100)
+        console.log('Buğra\'nın Tükanı')
+
+        let x= 3;
+        let y=4
+        console.log(x**=y)
+        // x-=y
+        // x**=y
+
+        let a= true;
+        let b =false;
+        // Boolean
+
+        const person ={
+            firstName:"Buğra",
+            lastName:"ELLEK"
+        };
+        //obje tanımlamak
+
+        const color = "yellow";
+        //strings
+
+        const cars=["mercedes","volvo","bmw"];
+
+        function myFunction(p1, p2){
+            return p1*p2;
+        }
+        let result = myFunction(4,3);
+        console.log(result);
+        document.getElementById("fonksiyon").innerHTML =result;
+
+        let sicaklik = 77;
+
+        let text ="hava sıcaklığı" + " " + sicaklikDonusturucu(sicaklik) + " " + "Santigrat Derece";
+        document.getElementById("temperature").innerHTML =text;
+
+        function sicaklikDonusturucu(fahrenheit) {
+            return (fahrenheit-32)/1.8;
+        }
+
+        const persons={
+            firstName: "Buğra",
+            lastName: "ELLEK",
+            age:25,
+            eyeColor:"Green",
+            marriage:"bekar",
+            child:0,
+            // fullName: function() {
+            //    return this.firstName+ " "+ this.lastName;
+            //  }
+
+         };
+        // persons.fullName= function() {
+        //         return this.firstName+ " "+ this.lastName. toUpperCase();
+        //     };
+        
+
+        persons.nation= "Türkiye";
+        // delete persons.age;
+        // delete persons["age"];
+        // document.getElementById("person").innerHTML =persons.firstName+ " 'nın " + "yaşı "+ persons.age +" "+persons.marriage + " ve "+ persons.child+ " adet çocuğu vardır." + " Buğra " +persons.nation + " 'dür.";
+        // document.getElementById("tamisim").innerHTML= persons.fullName();
+        // document.getElementById("obje").innerHTML = persons;
+        
+        let texts = "";
+        for(let x in persons) {
+            texts += persons[x] +" ";
+        }
+
+        document.getElementById("text").innerHTML= texts;
+
+        const dizi =Object.values(persons);
+        document.getElementById("dizi").innerHTML=dizi;
+
+        const pcStocks ={hp:300, dell:1200, casper:150,apple:50};
+        let stockInfo ="";
+        for (let [pcStock, amount] of Object.entries(pcStocks)){
+            stockInfo += pcStock + ": " + amount +"<br>";
+        }
+        document.getElementById("stok").innerHTML =stockInfo;
+
+        let propertyPersons= JSON.stringify(persons);
+        document.getElementById("stokiki").innerHTML=propertyPersons;
+        document.getElementById("stok3").innerHTML=JSON.stringify(pcStocks.hp);
+
+        
+        function fruits(name, color, size, soft, taste) {
+            this.namediff=name;
+            this.colordiff = color;
+            this.sizediff= size;
+            this.softnessdiff= soft;
+            this.tastediff= taste;
+            this.specs= "fruit";
+        }
+        fruits.prototype.store="stores";
+        
+        const muz = new fruits("banana", "yellow", "medium", "hard", "sweet");
+        const elma = new fruits("apple","red","medium","hard","sour")
+        const kavun = new fruits("melon","yellow","large","soft","sweet")
+
+        document.getElementById("muz").innerHTML= "Benim seçtiğim meyvenin rengi " +muz.colordiff+ " ve " + muz.softnessdiff+" diğer meyvenin ismi " + elma.namediff + " rengi "+ elma.sizediff; //haftaya bakılacak!!!
+
+        
+
+    </script>
+
+</body>
+
+</html>
